@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  lunchapp:
+    build: lunchapp
+    image: oddballgreg/lunchapp
+    command: bin/rails s
+    volumes:
+      - ./lunchapp:/src/app
+      - ./box:/box:delegated
+    networks:
+      lunchapp-net:
+    ports:
+      - 3000:3000
+    extra_hosts:
+      - rubygems.org:151.101.64.70
+    env:
+      - BUNDLE_PATH=/box
+      - PATH="/box/bin:${PATH}"
+  postgres:
+    image: postgres:11.2-alpine
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      lunchapp-net:
+
+networks:
+  lunchapp-net:
