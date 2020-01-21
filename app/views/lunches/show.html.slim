@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Cost rands:
+  = @lunch.cost_rands
+p
+  strong Cost cents:
+  = @lunch.cost_cents
+p
+  strong Enjoyment:
+  = @lunch.enjoyment
+p
+  strong Prep time minutes:
+  = @lunch.prep_time_minutes
+p
+  strong User:
+  = @lunch.user.email
+
+=> link_to 'Edit', edit_lunch_path(@lunch)
+'|
+=< link_to 'Back', lunches_path

@@ -1,0 +1,21 @@
+= form_for @lunch do |f|
+  - if @lunch.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@lunch.errors.count, "error")} prohibited this lunch from being saved:"
+      ul
+        - @lunch.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :cost_rands
+    = f.number_field :cost_rands
+  .field
+    = f.label :cost_cents
+    = f.number_field :cost_cents
+  .field
+    = f.label :enjoyment
+    = f.number_field :enjoyment
+  .field
+    = f.label :prep_time_minutes
+    = f.number_field :prep_time_minutes
+  .actions = f.submit

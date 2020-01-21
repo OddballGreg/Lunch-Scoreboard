@@ -1,0 +1,27 @@
+h1 Listing lunches
+
+table.table.table-bordered
+  thead
+    tr
+      th Cost
+      th Enjoyment
+      th Prep time minutes
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @lunches.each do |lunch|
+      tr
+        td = "R#{lunch.cost_rands}.#{lunch.cost_cents}"
+        td = lunch.enjoyment
+        td = lunch.prep_time_minutes
+        td = lunch.user.email
+        td = link_to 'Show', lunch
+        td = link_to 'Edit', edit_lunch_path(lunch)
+        td = link_to 'Destroy', lunch, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Lunch', new_lunch_path, class: 'btn btn-info'
