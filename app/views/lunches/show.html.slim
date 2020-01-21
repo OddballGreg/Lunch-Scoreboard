@@ -1,11 +1,11 @@
 p#notice = notice
 
 p
-  strong Cost rands:
-  = @lunch.cost_rands
+  strong Name:
+  = @lunch.name
 p
-  strong Cost cents:
-  = @lunch.cost_cents
+  strong Cost:
+  = "R#{@lunch.cost_rands}.#{@lunch.cost_cents}"
 p
   strong Enjoyment:
   = @lunch.enjoyment

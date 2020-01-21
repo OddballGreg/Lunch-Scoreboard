@@ -55,6 +55,6 @@ class LunchesController < ApplicationController
     end
 
     def lunch_params
-      params.require(:lunch).permit(:cost_rands, :cost_cents, :enjoyment, :prep_time_minutes)
+      params.require(:lunch).permit(:name, :cost_rands, :cost_cents, :enjoyment, :prep_time_minutes)
     end
 end

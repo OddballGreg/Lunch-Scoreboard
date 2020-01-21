@@ -3,6 +3,7 @@ h1 Listing lunches
 table.table.table-bordered
   thead
     tr
+      th Name
       th Cost
       th Enjoyment
       th Prep time minutes
@@ -14,6 +15,7 @@ table.table.table-bordered
   tbody
     - @lunches.each do |lunch|
       tr
+        td = lunch.name
         td = "R#{lunch.cost_rands}.#{lunch.cost_cents}"
         td = lunch.enjoyment
         td = lunch.prep_time_minutes
