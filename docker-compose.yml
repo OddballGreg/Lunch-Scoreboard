@@ -13,9 +13,7 @@ services:
       - 3000:3000
     extra_hosts:
       - rubygems.org:151.101.64.70
-    env:
-      - BUNDLE_PATH=/box
-      - PATH="/box/bin:${PATH}"
+    env_file: .env
   postgres:
     image: postgres:11.2-alpine
     volumes:
