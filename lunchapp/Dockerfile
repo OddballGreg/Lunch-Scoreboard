@@ -13,3 +13,5 @@ RUN apk add --update \
 RUN mkdir -p /src/app
 WORKDIR /src/app
 COPY Gemfile* ./
+ENV BUNDLE_PATH /box
+ENV PATH "/box/bin:${PATH}"
